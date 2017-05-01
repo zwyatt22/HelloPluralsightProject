@@ -37,7 +37,7 @@ describe('Your HTML Page', function() {
     assert.isAtLeast(window.$('body > ul').length, 1, "Make sure to create a `ul` element that's a child of the `body` element.");
   });
 
-  it('should have at least 2 li elements that are children of the ul element @li', function() {
+  it('should have at least 2 li elements that are children of the ul element @ul', function() {
     assert.isAtLeast(window.$('body > ul > li').length, 2, "Make sure to create at least 2 `li` elements that are children of the `ul` element.");
   });
 
