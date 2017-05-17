@@ -30,7 +30,7 @@ describe('Your HTML Page', function() {
   });
 
   it('should have content in the h1 element @h1', function() {
-    assert.equal(window.$('body > h1').text(), 'Hello, Pluralsight!', "Make sure to set the content of your `h1` element to 'Hello, Pluralsight!'.");
+    assert.equal(window.$('body > h1').text().trim(), 'Hello, Pluralsight!', "Make sure to set the content of your `h1` element to 'Hello, Pluralsight!'.");
   });
 
   it('should have a ul that\'s a child of the body element @ul', function() {
@@ -43,7 +43,7 @@ describe('Your HTML Page', function() {
 
   it('should have content for each of the `li` elements. @li', function() {
     assert.isAtLeast(window.$('body > ul > li').length, 2, "Make sure you have at least 2 `li` elements with things you want to learn.");
-      
+
     var message = "Make sure that each `li` element contains some text describing one thing you want to learn."
     assert.notEqual(window.$('body > ul > li:first').text(), '', message);
     assert.notEqual(window.$('body > ul > li:last').text(), '', message);
