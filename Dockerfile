@@ -1,4 +1,4 @@
-FROM node:8.12
+FROM node:8.12-alpine
 
 ENV APP_DIR /src/app/
 
