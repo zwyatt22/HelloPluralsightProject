@@ -3,18 +3,15 @@ var jsdom = require('jsdom'),
     assert = require('chai').assert,
     file = fs.readFileSync('index.html').toString();
 
+var { JSDOM } = jsdom;
+
 describe('Your HTML Page', function() {
   var window;
-  before(function(next) {
-    jsdom.env(
-      file,
-      ["http://code.jquery.com/jquery.js"],
-      function (err, w) {
-        if(err) { next(err); }
-        window = w;
-        next();
-      }
-    );
+
+  before(function() {
+    window = new JSDOM(file).window;
+
+    require('jquery')(window);
   });
 
   it('should have a title that\'s a child of the head element @title', function() {
